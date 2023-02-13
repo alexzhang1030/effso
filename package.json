@@ -1,0 +1,51 @@
+{
+  "name": "effso",
+  "version": "0.0.0",
+  "type": "module",
+  "packageManager": "pnpm@7.27.0",
+  "description": "Effso is a tool to help you operate files and directories in a more efficient way.",
+  "keywords": [
+    "CLI",
+    "effso",
+    "file system",
+    "file"
+  ],
+  "scripts": {
+    "play": "tsx ./src/index.ts",
+    "build": "unbuild"
+  },
+  "files": [
+    "dist",
+    "template"
+  ],
+  "devDependencies": {
+    "@antfu/eslint-config-ts": "^0.35.2",
+    "@clack/prompts": "^0.0.9",
+    "@types/fs-extra": "^11.0.1",
+    "@types/node": "^18.13.0",
+    "cac": "^6.7.14",
+    "consola": "^2.15.3",
+    "eslint": "^8.34.0",
+    "fast-glob": "^3.2.12",
+    "fs-extra": "^11.1.0",
+    "home-or-tmp": "^4.0.0",
+    "lint-staged": "^13.1.1",
+    "pathe": "^1.1.0",
+    "pkg-dir": "^7.0.0",
+    "simple-git-hooks": "^2.8.1",
+    "tsx": "^3.12.3",
+    "typescript": "5.0.0-beta",
+    "unbuild": "^1.1.1"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm exec lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,ts,json,md,yaml,yml}": [
+      "eslint --fix"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "@antfu/eslint-config-ts"
+  }
+}
