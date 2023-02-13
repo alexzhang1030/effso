@@ -5,7 +5,7 @@ import { run } from './effso'
 import { setup } from './setup'
 
 export const setupCLI = async () => {
-  const cli = cac()
+  const cli = cac('effso')
 
   cli.command('run', 'Run effso').action(async () => {
     await safetyRun(run)
