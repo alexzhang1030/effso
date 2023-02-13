@@ -18,8 +18,12 @@
   },
   "files": [
     "dist",
-    "template"
+    "template",
+    "bin"
   ],
+  "bin": {
+    "effso": "./bin/effso.mjs"
+  },
   "devDependencies": {
     "@antfu/eslint-config-ts": "^0.35.2",
     "@clack/prompts": "^0.0.9",
