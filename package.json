@@ -12,7 +12,9 @@
   ],
   "scripts": {
     "play": "tsx ./src/index.ts",
-    "build": "unbuild"
+    "build": "unbuild",
+    "prepublishOnly": "pnpm run build",
+    "release": "bumpp --commit \"chore: release v%s\" --push --tag && pnpm publish"
   },
   "files": [
     "dist",
@@ -23,6 +25,7 @@
     "@clack/prompts": "^0.0.9",
     "@types/fs-extra": "^11.0.1",
     "@types/node": "^18.13.0",
+    "bumpp": "^8.2.1",
     "cac": "^6.7.14",
     "consola": "^2.15.3",
     "eslint": "^8.34.0",
