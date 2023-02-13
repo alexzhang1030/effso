@@ -36,4 +36,85 @@ pnpm i -g effso
 effso setup
 ```
 
-will generate a `.effso` directory in your home directory.
+will generate a `.effso/example` directory in your home directory.
+
+It generates some example examples:
+
+- `main.ts`
+- `.editorconfig`
+- `.gitignore`
+- `eslint.pkg.ts`
+- `renovate.file.ts`
+
+## Usage
+
+```bash
+# Run in your project directory
+effso run
+```
+
+Will shows a selector, you can choose the rules you want to run.
+
+It will read `~/.effso/*` to generate rules. One second level directory will become one option.
+
+When you choose a rule, it will read the files in the directory, and operate current workspace files by pre-defined rules.
+
+### Rules
+
+#### `main.ts`
+
+The main entry, will read configures.
+
+Currently only support `default` option. If `main.ts` is not provided, will have no default selected rules.
+
+```ts
+export default {
+  default: ['.gitignore', '.editorconfig'],
+}
+```
+
+#### Single file
+
+Every single file selected will overrides current workspace file.
+
+#### *.pkg.ts
+
+Will execute this rule by passing current `package.json` if it exists.
+
+```ts
+export default function (pkg: packageJson) {
+  // to something
+}
+```
+
+#### *.file.ts
+
+Will execute this rule by passing current workspace path.
+
+```ts
+export default function (path: string, helpers: {
+  read: (path: string) => string
+  write: (path: string, content: string) => void
+}) {
+  // to something
+}
+```
+
+You can modify the file by `helpers.read` and `helpers.write`.
+
+For example:
+
+```ts
+export default function (path: string, helpers: {
+  read: (path: string) => string
+  write: (path: string, content: string) => void
+}) {
+  const target = `${path}/.github/renovate.json`
+  const content = helpers.read(target)
+  if (!content) {
+    write(target, JSON.stringify({
+      extends: ['config:base'],
+    }, null, 2))
+  }
+}
+```
