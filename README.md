@@ -1,5 +1,8 @@
 # Effso
 
+> **Warning**
+> Notice that Effso is still in the early stage of development, and the API is not stable. Use it at your own risk.
+
 ## Basic conception
 
 What problems does Effso solve?
