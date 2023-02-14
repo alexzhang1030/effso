@@ -1,9 +1,8 @@
 import fg from 'fast-glob'
 import { multiselect, select } from '@clack/prompts'
-import { joinTemplate, splitPaths } from '../utils/path'
-import { makeSure } from '../utils'
-import { resolveSingle } from './single'
+import { joinTemplate, makeSure, resolveSpecial, splitPaths } from '../utils'
 import { resolvePkg } from './pkg'
+import { resolveSingle } from './single'
 
 const resolveRootOptions = async (rootDirs: string[] = []) => {
   return await select({
@@ -16,11 +15,13 @@ const resolveRootOptions = async (rootDirs: string[] = []) => {
 }
 
 const resolveOptions = async (parentPath: string) => {
-  const files = await fg(['*', '!main.ts'], {
+  let files = await fg(['*', '!main.ts'], {
     onlyFiles: true,
     dot: true,
     cwd: parentPath,
   })
+
+  files = resolveSpecial(files)
 
   const selected = await multiselect({
     message: 'Pick operations',
@@ -32,10 +33,11 @@ const resolveOptions = async (parentPath: string) => {
 
   const { filePaths, pkgPaths, singles } = splitPaths(selected)
   makeSure(async () => {
-    await resolveSingle(singles, parentPath)
-    await resolvePkg(pkgPaths, parentPath)
-  },
-  'Are you sure?')
+    if (singles.length)
+      await resolveSingle(singles, parentPath)
+    if (pkgPaths.length)
+      await resolvePkg(pkgPaths, parentPath)
+  }, 'Are you sure?')
 }
 
 export const resolve = async (path: string) => {

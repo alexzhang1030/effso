@@ -9,5 +9,5 @@ export const makeSure = async (cb: () => Promise<void>, message: string) => {
     message,
   })
   if (sure)
-    cb()
+    await cb()
 }
