@@ -1,4 +1,6 @@
-# Effso
+# EFFSO
+
+![logo](./resource/logo.png)
 
 [English](./README.md) / 简体中文
 
