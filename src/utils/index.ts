@@ -27,5 +27,5 @@ export const readAndParseTS = async (path: string) => {
 }
 
 export const printErr = (message: string) => {
-  consola.error(`[EFFSO] Error: ${message}`)
+  consola.error(message)
 }

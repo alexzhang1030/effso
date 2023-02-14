@@ -5,15 +5,10 @@ import type { PackageJSON } from '..'
 
 const single = async (path: string) => {
   const content = await readAndParseTS(path)
-  try {
-    const pkgJson = await readGuard(targetRootPkgJSON(), 'package.json')
-    const code = `${content};\n\nreturn main(${pkgJson});`
-    // eslint-disable-next-line no-new-func
-    return new Function(code)()
-  }
-  catch (error) {
-    printErr((error as Error).message)
-  }
+  const pkgJson = await readGuard(targetRootPkgJSON(), 'package.json')
+  const code = `${content};\n\nreturn main(${pkgJson});`
+  // eslint-disable-next-line no-new-func
+  return new Function(code)()
 }
 
 export const resolvePkg = async (files: string[], parentPath: string) => {
@@ -23,6 +18,7 @@ export const resolvePkg = async (files: string[], parentPath: string) => {
       single(`${parentPath}/${item}`).then((result) => {
         resolve(result)
       }).catch((err) => {
+        printErr((err as Error).message)
         reject(err)
       })
     }))
