@@ -17,6 +17,7 @@ specifiers:
   lint-staged: ^13.1.2
   pathe: ^1.1.0
   pkg-dir: ^7.0.0
+  putil-merge: ^3.10.1
   simple-git-hooks: ^2.8.1
   taze: ^0.8.5
   tsx: ^3.12.3
@@ -42,6 +43,7 @@ devDependencies:
   lint-staged: 13.1.2
   pathe: 1.1.0
   pkg-dir: 7.0.0
+  putil-merge: 3.10.1
   simple-git-hooks: 2.8.1
   taze: 0.8.5
   tsx: 3.12.3
@@ -3889,6 +3891,11 @@ packages:
   /punycode/2.3.0:
     resolution: {integrity: sha512-rRV+zQD8tVFys26lAGR9WUuS4iUAngJScM+ZRSKtvl5tKeZ2t5bvdNFdNHBW9FWR4guGHlgmsZ1G7BSm2wTbuA==}
     engines: {node: '>=6'}
+    dev: true
+
+  /putil-merge/3.10.1:
+    resolution: {integrity: sha512-t3cLn14qccFvmb4bYQfNEHoisab//bTjM3lp56Ks8rOsjWF2ssf7Vapg9Lt89GlEawyNdeu+xj5GSrsFqNoCDQ==}
+    engines: {node: '>= 10.0'}
     dev: true
 
   /queue-microtask/1.2.3:

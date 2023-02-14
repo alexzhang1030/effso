@@ -1,9 +1,10 @@
-import { readFile } from 'fs/promises'
+import { readFile, writeFile } from 'fs/promises'
 import fg from 'fast-glob'
 import * as esbuild from 'esbuild'
 import { multiselect } from '@clack/prompts'
-import { GLOB_PATTERNS, joinTemplate, targetRootPkgJSON } from '../utils/path'
-import { readGuard } from '../utils/file'
+import merge from 'putil-merge'
+import { GLOB_PATTERNS, joinTemplate, readGuard, targetRootPkgJSON } from '../utils'
+import type { PackageJSON } from '..'
 
 const single = async (path: string) => {
   const fileContent = await readFile(joinTemplate(path), {
@@ -29,7 +30,17 @@ export const resolvePkg = async (parentPath: string) => {
       value: item,
     })),
   }) as string[]
-  const chunks = []
-  for (const item of selected)
-    chunks.push(await single(`${parentPath}/${item}`))
+  const promises = []
+  for (const item of selected) {
+    promises.push(new Promise<PackageJSON>((resolve, reject) => {
+      single(`${parentPath}/${item}`).then((result) => {
+        resolve(result)
+      }).catch((err) => {
+        reject(err)
+      })
+    }))
+  }
+  const chunks = await Promise.all(promises)
+  const finalPkg = merge.all([...chunks])
+  writeFile(targetRootPkgJSON(), JSON.stringify(finalPkg, null, 2))
 }
