@@ -2,6 +2,7 @@ import hot from 'home-or-tmp'
 import { basename, resolve } from 'pathe'
 import findRoot from 'find-root'
 
+export const TARGET_PATH = process.cwd()
 export const homeOrTemp: string = hot
 export const DEFAULT_TEMPLATE_PATH = resolve(homeOrTemp, './.effso')
 
@@ -22,7 +23,7 @@ export const resolveSpecial = (paths: string[], toReal = true) => {
   return paths.map(item => _currentMap[item] || item)
 }
 export const joinTemplate = (sub: string) => resolve(DEFAULT_TEMPLATE_PATH, sub)
-export const withTarget = (path: string) => resolve(process.cwd(), path)
+export const withTarget = (path: string) => resolve(TARGET_PATH, path)
 export const splitPaths = (files: string[]) => {
   const pkgPaths: string[] = []
   const singles: string[] = []
@@ -42,5 +43,5 @@ export const splitPaths = (files: string[]) => {
   }
 }
 
-export const targetRoot = () => basename(findRoot(process.cwd()))
-export const targetRootPkgJSON = () => resolve(process.cwd(), 'package.json')
+export const targetRoot = () => basename(findRoot(TARGET_PATH))
+export const targetRootPkgJSON = () => resolve(targetRoot(), 'package.json')

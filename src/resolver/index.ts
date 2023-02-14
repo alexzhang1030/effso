@@ -3,6 +3,7 @@ import { multiselect, select } from '@clack/prompts'
 import { joinTemplate, makeSure, resolveSpecial, splitPaths } from '../utils'
 import { resolvePkg } from './pkg'
 import { resolveSingle } from './single'
+import { resolveFile } from './file'
 
 const resolveRootOptions = async (rootDirs: string[] = []) => {
   return await select({
@@ -37,6 +38,8 @@ const resolveOptions = async (parentPath: string) => {
       await resolveSingle(singles, parentPath)
     if (pkgPaths.length)
       await resolvePkg(pkgPaths, parentPath)
+    if (filePaths.length)
+      await resolveFile(filePaths, parentPath)
   }, 'Are you sure?')
 }
 

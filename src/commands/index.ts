@@ -1,6 +1,6 @@
 import cac from 'cac'
 import { version } from '../../package.json'
-import { safetyRun } from '../utils/run'
+import { safetyRun } from '../utils'
 import { run } from './run'
 import { setup } from './setup'
 

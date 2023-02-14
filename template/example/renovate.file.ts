@@ -1,4 +1,4 @@
-export default function (path: string, helpers: {
+function main(path: string, helpers: {
   read: (path: string) => string
   write: (path: string, content: string) => void
 }) {
