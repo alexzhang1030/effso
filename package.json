@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config-ts": "^0.35.2",
-    "@clack/prompts": "^0.0.9",
+    "@clack/prompts": "^0.2.0",
     "@types/fs-extra": "^11.0.1",
     "@types/node": "^18.13.0",
     "bumpp": "^8.2.1",
@@ -36,12 +36,13 @@
     "fast-glob": "^3.2.12",
     "fs-extra": "^11.1.0",
     "home-or-tmp": "^4.0.0",
-    "lint-staged": "^13.1.1",
+    "lint-staged": "^13.1.2",
     "pathe": "^1.1.0",
     "pkg-dir": "^7.0.0",
     "simple-git-hooks": "^2.8.1",
+    "taze": "^0.8.5",
     "tsx": "^3.12.3",
-    "typescript": "5.0.0-beta",
+    "typescript": "4.9.5",
     "unbuild": "^1.1.1"
   },
   "simple-git-hooks": {
