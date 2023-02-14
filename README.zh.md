@@ -62,7 +62,7 @@ effso run
 
 ### 规则
 
-这有一个我的 [effso 配置参考](https://github.com/alexzhang1030/effso-template)
+这有一个我的 [effso 规则参考](https://github.com/alexzhang1030/effso-rules)
 
 #### `main.json`
 
@@ -85,7 +85,7 @@ effso run
 
 每个单独的文件选择将会覆盖当前工作区文件。
 
-#### *.pkg.ts
+#### \*.pkg.ts
 
 如果当前工作区存在 `package.json`，将通过传递 `package.json` 执行此规则。
 
@@ -97,17 +97,20 @@ function main(pkg: Record<string, any>) {
 }
 ```
 
-#### *.file.ts
+#### \*.file.ts
 
 将通过传递当前工作区路径执行此规则。
 
 与 `*.pkg.ts` 相同，此文件只能有一个函数，其名称必须为 `main`，并且只能接受两个参数。
 
 ```ts
-function main(path: string, helpers: {
-  read: (path: string) => string
-  write: (path: string, content: string) => void
-}) {
+function main(
+  path: string,
+  helpers: {
+    read: (path: string) => string;
+    write: (path: string, content: string) => void;
+  }
+) {
   // to something
 }
 ```
@@ -117,16 +120,26 @@ function main(path: string, helpers: {
 例如：
 
 ```ts
-function main(path: string, helpers: {
-  read: (path: string) => string
-  write: (path: string, content: string) => void
-}) {
-  const target = `${path}/.github/renovate.json`
-  const content = helpers.read(target)
+function main(
+  path: string,
+  helpers: {
+    read: (path: string) => string;
+    write: (path: string, content: string) => void;
+  }
+) {
+  const target = `${path}/.github/renovate.json`;
+  const content = helpers.read(target);
   if (!content) {
-    write(target, JSON.stringify({
-      extends: ['config:base'],
-    }, null, 2))
+    write(
+      target,
+      JSON.stringify(
+        {
+          extends: ["config:base"],
+        },
+        null,
+        2
+      )
+    );
   }
 }
 ```

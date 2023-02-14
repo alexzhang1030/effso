@@ -63,7 +63,7 @@ When you choose a rule, it will read the files in the directory, and operate cur
 
 ### Rules
 
-Here is my [effso template example](https://github.com/alexzhang1030/effso-template)
+Here is my [effso rules example](https://github.com/alexzhang1030/effso-rules)
 
 #### `main.json`
 
@@ -73,11 +73,7 @@ Currently only support `JSON`. If `main.json` is not provided, will have no defa
 
 ```json
 {
-  "default": [
-    ".gitignore",
-    ".editorconfig",
-    "eslint.pkg.ts"
-  ]
+  "default": [".gitignore", ".editorconfig", "eslint.pkg.ts"]
 }
 ```
 
@@ -85,7 +81,7 @@ Currently only support `JSON`. If `main.json` is not provided, will have no defa
 
 Every single file selected will overrides current workspace file.
 
-#### *.pkg.ts
+#### \*.pkg.ts
 
 Will execute this rule by passing current `package.json` if it exists.
 
@@ -97,17 +93,20 @@ function main(pkg: Record<string, any>) {
 }
 ```
 
-#### *.file.ts
+#### \*.file.ts
 
 Will execute this rule by passing current workspace path.
 
 The same as `*.pkg.ts`, this file can only have one function, it's name must be `main`, and can only accept two arguments.
 
 ```ts
-function main(path: string, helpers: {
-  read: (path: string) => string
-  write: (path: string, content: string) => void
-}) {
+function main(
+  path: string,
+  helpers: {
+    read: (path: string) => string;
+    write: (path: string, content: string) => void;
+  }
+) {
   // to something
 }
 ```
@@ -117,16 +116,26 @@ You can modify the file by `helpers.read` and `helpers.write`.
 For example:
 
 ```ts
-function main(path: string, helpers: {
-  read: (path: string) => string
-  write: (path: string, content: string) => void
-}) {
-  const target = `${path}/.github/renovate.json`
-  const content = helpers.read(target)
+function main(
+  path: string,
+  helpers: {
+    read: (path: string) => string;
+    write: (path: string, content: string) => void;
+  }
+) {
+  const target = `${path}/.github/renovate.json`;
+  const content = helpers.read(target);
   if (!content) {
-    write(target, JSON.stringify({
-      extends: ['config:base'],
-    }, null, 2))
+    write(
+      target,
+      JSON.stringify(
+        {
+          extends: ["config:base"],
+        },
+        null,
+        2
+      )
+    );
   }
 }
 ```
