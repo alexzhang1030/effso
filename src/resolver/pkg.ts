@@ -1,9 +1,7 @@
 import { readFile, writeFile } from 'fs/promises'
-import fg from 'fast-glob'
 import * as esbuild from 'esbuild'
-import { multiselect } from '@clack/prompts'
 import merge from 'putil-merge'
-import { GLOB_PATTERNS, joinTemplate, readGuard, targetRootPkgJSON } from '../utils'
+import { joinTemplate, readGuard, targetRootPkgJSON } from '../utils'
 import type { PackageJSON } from '..'
 
 const single = async (path: string) => {
@@ -19,19 +17,9 @@ const single = async (path: string) => {
   return new Function(code)()
 }
 
-export const resolvePkg = async (parentPath: string) => {
-  const pkgFiles = await fg(GLOB_PATTERNS.pkg, {
-    onlyFiles: true,
-    cwd: parentPath,
-  })
-  const selected = await multiselect({
-    message: '[Pkg file]: Pick you want to operate current root package.json',
-    options: pkgFiles.map(item => ({
-      value: item,
-    })),
-  }) as string[]
+export const resolvePkg = async (files: string[], parentPath: string) => {
   const promises = []
-  for (const item of selected) {
+  for (const item of files) {
     promises.push(new Promise<PackageJSON>((resolve, reject) => {
       single(`${parentPath}/${item}`).then((result) => {
         resolve(result)

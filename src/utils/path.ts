@@ -6,11 +6,6 @@ import findRoot from 'find-root'
 
 export const homeOrTemp: string = hot
 export const DEFAULT_TEMPLATE_PATH = resolve(homeOrTemp, './.effso')
-export const GLOB_PATTERNS = {
-  pkg: ['*.pkg.ts', '!main.ts'],
-  file: ['*.file.ts', '!main.ts'],
-  single: ['*', '!*.pkg.ts', '!*.file.ts', '!main.ts'],
-}
 
 export const specialMapping = {
   _gitignore: '.gitignore',
@@ -30,7 +25,25 @@ export const resolveSpecial = (paths: string[], toReal = true) => {
 }
 export const joinTemplate = (sub: string) => resolve(DEFAULT_TEMPLATE_PATH, sub)
 export const withTarget = (path: string) => resolve(process.cwd(), path)
-export const globNot = (pattern: string[]) => pattern.map(p => `!${p}`)
+export const splitPaths = (files: string[]) => {
+  // 根据不同的后缀，拆分为不同的数组, 如果以 .pkg.ts 为后缀，拆分为 pkg.ts, 如果以 .file.ts 为后缀，拆分为 ts
+  const pkgPaths: string[] = []
+  const singles: string[] = []
+  const filePaths: string[] = []
+  for (const item of files) {
+    if (item.endsWith('.pkg.ts'))
+      pkgPaths.push(item)
+    else if (item.endsWith('.file.ts'))
+      filePaths.push(item)
+    else
+      singles.push(item)
+  }
+  return {
+    pkgPaths,
+    singles,
+    filePaths,
+  }
+}
 
 export const targetRoot = () => basename(findRoot(process.cwd()))
 export const targetRootPkgJSON = () => resolve(process.cwd(), 'package.json')
