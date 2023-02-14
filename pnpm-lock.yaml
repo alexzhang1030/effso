@@ -9,6 +9,7 @@ specifiers:
   '@types/node': ^18.13.0
   bumpp: ^8.2.1
   cac: ^6.7.14
+  chalk: ^5.2.0
   consola: ^2.15.3
   esbuild: ^0.17.8
   eslint: ^8.34.0
@@ -38,6 +39,7 @@ devDependencies:
   '@types/node': 18.13.0
   bumpp: 8.2.1
   cac: 6.7.14
+  chalk: 5.2.0
   consola: 2.15.3
   eslint: 8.34.0
   fast-glob: 3.2.12
