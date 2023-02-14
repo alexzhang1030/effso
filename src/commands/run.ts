@@ -5,5 +5,5 @@ import { DEFAULT_TEMPLATE_PATH } from '../utils/path'
 export const run = async () => {
   intro('🚀 Effso')
   await resolve(DEFAULT_TEMPLATE_PATH)
-  outro('❤️‍🔥 Effso end...')
+  outro('👋 Effso end...')
 }

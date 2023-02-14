@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config-ts": "^0.35.2",
+    "@clack/core": "^0.1.2",
     "@clack/prompts": "^0.2.0",
     "@types/find-root": "^1.1.2",
     "@types/fs-extra": "^11.0.1",

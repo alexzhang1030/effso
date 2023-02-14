@@ -12,3 +12,7 @@ export type PackageJSON = Partial<{
   dependencies: Record<string, string>
   [key: string]: any
 }>
+
+export type DefaultConfig = Partial<{
+  default: string[]
+}>
