@@ -10,15 +10,17 @@ export const GLOB_PATTERNS = {
   single: ['*', '!*.pkg.ts', '!*.file.ts', '!main.ts'],
 }
 
-const _mapping = {
+export const specialMapping = {
   _gitignore: '.gitignore',
   _foo: '.bar',
 }
 
+export const specialKeys = Object.keys(specialMapping)
+
 export const resolveSpecial = (paths: string[], toReal = true) => {
   const _currentMap: Record<string, string> = toReal
-    ? _mapping
-    : Object.entries(_mapping).reduce((acc, [k, v]) => {
+    ? specialMapping
+    : Object.entries(specialMapping).reduce((acc, [k, v]) => {
       acc[v] = k
       return acc
     }, {} as Record<string, string>)

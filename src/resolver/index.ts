@@ -1,7 +1,7 @@
 import fg from 'fast-glob'
 import { confirm, multiselect, select } from '@clack/prompts'
 import { copy } from 'fs-extra'
-import { GLOB_PATTERNS, joinTemplate, resolveSpecial, withTarget } from '../utils/path'
+import { GLOB_PATTERNS, joinTemplate, resolveSpecial, specialKeys, specialMapping, withTarget } from '../utils/path'
 import { safetyRun } from '../utils/run'
 
 const resolveRootOptions = async (rootDirs: string[] = []) => {
@@ -33,7 +33,9 @@ const resolveSingle = async (parentPath: string) => {
   if (!sure)
     return
   safetyRun(async () => await Promise.all(resolveSpecial(selected, false).map((item) => {
-    return copy(joinTemplate(`${parentPath}/${item}`), withTarget(item))
+    return copy(joinTemplate(`${parentPath}/${item}`), withTarget(
+      specialKeys.includes(item) ? specialMapping[item as keyof typeof specialMapping] : item,
+    ))
   })))
 }
 
