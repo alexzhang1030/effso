@@ -1,5 +1,7 @@
 # Effso
 
+English / [简体中文](./README.zh.md)
+
 > **Warning**
 > Notice that Effso is still in the early stage of development, and the API is not stable. Use it at your own risk.
 
@@ -111,7 +113,7 @@ You can modify the file by `helpers.read` and `helpers.write`.
 For example:
 
 ```ts
-export default function (path: string, helpers: {
+function main(path: string, helpers: {
   read: (path: string) => string
   write: (path: string, content: string) => void
 }) {
