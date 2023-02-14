@@ -26,7 +26,6 @@ export const resolveSpecial = (paths: string[], toReal = true) => {
 export const joinTemplate = (sub: string) => resolve(DEFAULT_TEMPLATE_PATH, sub)
 export const withTarget = (path: string) => resolve(process.cwd(), path)
 export const splitPaths = (files: string[]) => {
-  // 根据不同的后缀，拆分为不同的数组, 如果以 .pkg.ts 为后缀，拆分为 pkg.ts, 如果以 .file.ts 为后缀，拆分为 ts
   const pkgPaths: string[] = []
   const singles: string[] = []
   const filePaths: string[] = []
