@@ -1,3 +1,4 @@
+// @ts-expect-error home-or-tmp is not typed
 import hot from 'home-or-tmp'
 import { resolve } from 'pathe'
 import { packageDirectorySync } from 'pkg-dir'
