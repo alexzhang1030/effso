@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@antfu/eslint-config-ts': ^0.35.2
   '@clack/prompts': ^0.2.0
+  '@types/find-root': ^1.1.2
   '@types/fs-extra': ^11.0.1
   '@types/node': ^18.13.0
   bumpp: ^8.2.1
@@ -30,6 +31,7 @@ dependencies:
 devDependencies:
   '@antfu/eslint-config-ts': 0.35.2_7kw3g6rralp5ps6mg3uyzz6azm
   '@clack/prompts': 0.2.0
+  '@types/find-root': 1.1.2
   '@types/fs-extra': 11.0.1
   '@types/node': 18.13.0
   bumpp: 8.2.1
@@ -1042,6 +1044,10 @@ packages:
 
   /@types/estree/1.0.0:
     resolution: {integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==}
+    dev: true
+
+  /@types/find-root/1.1.2:
+    resolution: {integrity: sha512-lGuMq71TL466jtCpvh7orGd+mrdBmo2h8ozvtOOTbq3ByfWpuN+UVxv4sOv3YpsD4NhW2k6ESGhnT/FIg4Ouzw==}
     dev: true
 
   /@types/fs-extra/11.0.1:

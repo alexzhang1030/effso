@@ -1,7 +1,5 @@
-// @ts-expect-error home-or-tmp is not typed
 import hot from 'home-or-tmp'
 import { basename, resolve } from 'pathe'
-// @ts-expect-error find-root is not typed
 import findRoot from 'find-root'
 
 export const homeOrTemp: string = hot
