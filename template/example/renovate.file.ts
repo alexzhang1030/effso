@@ -3,8 +3,10 @@ function main(path: string, helpers: {
   write: (path: string, content: string) => void
 }) {
   const target = `${path}/.github/renovate.json`
-  const content = helpers.read(target)
-  if (!content) {
+  try {
+    helpers.read(target)
+  }
+  catch (error) {
     helpers.write(target, JSON.stringify({
       extends: ['config:base'],
     }, null, 2))
