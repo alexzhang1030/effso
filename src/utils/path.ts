@@ -1,6 +1,6 @@
 import hot from 'home-or-tmp'
-import { basename, resolve } from 'pathe'
-import findRoot from 'find-root'
+import { resolve } from 'pathe'
+import { packageDirectorySync } from 'pkg-dir'
 
 export const TARGET_PATH = process.cwd()
 export const homeOrTemp: string = hot
@@ -43,5 +43,5 @@ export const splitPaths = (files: string[]) => {
   }
 }
 
-export const targetRoot = () => basename(findRoot(TARGET_PATH))
+export const targetRoot = () => packageDirectorySync({ cwd: TARGET_PATH }) ?? TARGET_PATH
 export const targetRootPkgJSON = () => resolve(targetRoot(), 'package.json')
