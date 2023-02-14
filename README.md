@@ -38,9 +38,9 @@ effso setup
 
 will generate a `.effso/example` directory in your home directory.
 
-It generates some example examples:
+It generates some simple examples:
 
-- `main.ts`
+- `main.json`
 - `.editorconfig`
 - `.gitignore`
 - `eslint.pkg.ts`
@@ -61,15 +61,19 @@ When you choose a rule, it will read the files in the directory, and operate cur
 
 ### Rules
 
-#### `main.ts`
+#### `main.json`
 
-The main entry, will read configures.
+Configure current root option default selected rules.
 
-Currently only support `default` option. If `main.ts` is not provided, will have no default selected rules.
+Currently only support `JSON`. If `main.json` is not provided, will have no default selected rules.
 
-```ts
-export default {
-  default: ['.gitignore', '.editorconfig'],
+```json
+{
+  "default": [
+    ".gitignore",
+    ".editorconfig",
+    "eslint.pkg.ts"
+  ]
 }
 ```
 
@@ -81,9 +85,11 @@ Every single file selected will overrides current workspace file.
 
 Will execute this rule by passing current `package.json` if it exists.
 
+Notice this file can only have one function, it's name must be `main`, and can only accept one argument.
+
 ```ts
-export default function (pkg: packageJson) {
-  // to something
+function main(pkg: Record<string, any>) {
+  // do something...
 }
 ```
 
@@ -91,8 +97,10 @@ export default function (pkg: packageJson) {
 
 Will execute this rule by passing current workspace path.
 
+The same as `*.pkg.ts`, this file can only have one function, it's name must be `main`, and can only accept two arguments.
+
 ```ts
-export default function (path: string, helpers: {
+function main(path: string, helpers: {
   read: (path: string) => string
   write: (path: string, content: string) => void
 }) {

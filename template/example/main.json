@@ -1,0 +1,7 @@
+{
+  "default": [
+    ".gitignore",
+    ".editorconfig",
+    "eslint.pkg.ts"
+  ]
+}
