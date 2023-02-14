@@ -2,6 +2,7 @@ import { readFile } from 'fs/promises'
 import fg from 'fast-glob'
 import { isCancel, multiselect, select } from '@clack/prompts'
 import { exists } from 'fs-extra'
+import consola from 'consola'
 import { joinTemplate, makeSure, resolveSpecial, splitPaths } from '../utils'
 import type { DefaultConfig } from '..'
 import { resolvePkg } from './pkg'
@@ -63,13 +64,18 @@ const resolveOptions = async (parentPath: string) => {
 }
 
 export const resolve = async (path: string) => {
-  const rootDirs = await fg('*', {
-    cwd: path,
-    onlyDirectories: true,
-  })
-  const root = await resolveRootOptions(rootDirs) as string
-  if (isCancel(root))
-    return
+  try {
+    const rootDirs = await fg('*', {
+      cwd: path,
+      onlyDirectories: true,
+    })
+    const root = await resolveRootOptions(rootDirs) as string
+    if (isCancel(root))
+      return
 
-  await resolveOptions(root)
+    await resolveOptions(root)
+  }
+  catch (error) {
+    consola.error(`[EFFSO] Error: ${(error as Error).message}`)
+  }
 }

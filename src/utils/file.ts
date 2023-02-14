@@ -6,5 +6,5 @@ export const readGuard = async (path: string, name: string) => {
   if (exist)
     return await readFile(path, 'utf-8')
   else
-    throw new Error(`[Effso] Error: Read ${name} failed`)
+    throw new Error(`Read ${name} failed, does it exist?`)
 }
