@@ -34,6 +34,7 @@
     "consola": "^2.15.3",
     "eslint": "^8.34.0",
     "fast-glob": "^3.2.12",
+    "find-root": "^1.1.0",
     "fs-extra": "^11.1.0",
     "home-or-tmp": "^4.0.0",
     "lint-staged": "^13.1.2",
@@ -55,5 +56,8 @@
   },
   "eslintConfig": {
     "extends": "@antfu/eslint-config-ts"
+  },
+  "dependencies": {
+    "esbuild": "^0.17.8"
   }
 }

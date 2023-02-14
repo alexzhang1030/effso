@@ -1,8 +1,8 @@
-export default function (pkg: Record<string, any>) {
+function main(pkg: Record<string, any>) {
   return {
     ...pkg,
     'simple-git-hooks': {
-      'pre-commit': 'pnpm exec lint-staged',
+      'pre-commit': 'pnpm exec lint-staged ---2',
     },
     'lint-staged': {
       '*.{js,ts,json,md,yaml,yml}': [

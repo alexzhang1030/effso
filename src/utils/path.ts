@@ -1,6 +1,8 @@
 // @ts-expect-error home-or-tmp is not typed
 import hot from 'home-or-tmp'
-import { resolve } from 'pathe'
+import { basename, resolve } from 'pathe'
+// @ts-expect-error find-root is not typed
+import findRoot from 'find-root'
 
 export const homeOrTemp: string = hot
 export const DEFAULT_TEMPLATE_PATH = resolve(homeOrTemp, './.effso')
@@ -29,3 +31,6 @@ export const resolveSpecial = (paths: string[], toReal = true) => {
 export const joinTemplate = (sub: string) => resolve(DEFAULT_TEMPLATE_PATH, sub)
 export const withTarget = (path: string) => resolve(process.cwd(), path)
 export const globNot = (pattern: string[]) => pattern.map(p => `!${p}`)
+
+export const targetRoot = () => basename(findRoot(process.cwd()))
+export const targetRootPkgJSON = () => resolve(process.cwd(), 'package.json')

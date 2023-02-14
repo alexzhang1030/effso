@@ -6,5 +6,6 @@ export default defineBuildConfig({
     inlineDependencies: true,
   },
   entries: ['./src/cli', './src/index'],
+  externals: ['esbuild'],
   declaration: true,
 })

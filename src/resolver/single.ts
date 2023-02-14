@@ -5,7 +5,7 @@ import { GLOB_PATTERNS, joinTemplate, resolveSpecial, specialKeys, specialMappin
 import { safetyRun } from '../utils/run'
 
 export const resolveSingle = async (parentPath: string) => {
-  const singleFiles = resolveSpecial(await fg([...GLOB_PATTERNS.single], {
+  const singleFiles = resolveSpecial(await fg(GLOB_PATTERNS.single, {
     onlyFiles: true,
     cwd: parentPath,
     dot: true,
