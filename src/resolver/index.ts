@@ -2,8 +2,7 @@ import { readFile } from 'fs/promises'
 import fg from 'fast-glob'
 import { isCancel, multiselect, select } from '@clack/prompts'
 import { exists } from 'fs-extra'
-import consola from 'consola'
-import { joinTemplate, makeSure, resolveSpecial, splitPaths } from '../utils'
+import { joinTemplate, makeSure, printErr, resolveSpecial, splitPaths } from '../utils'
 import type { DefaultConfig } from '..'
 import { resolvePkg } from './pkg'
 import { resolveSingle } from './single'
@@ -76,6 +75,6 @@ export const resolve = async (path: string) => {
     await resolveOptions(root)
   }
   catch (error) {
-    consola.error(`[EFFSO] Error: ${(error as Error).message}`)
+    printErr((error as Error).message)
   }
 }

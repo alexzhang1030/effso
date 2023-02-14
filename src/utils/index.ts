@@ -1,6 +1,7 @@
 import { readFile } from 'fs/promises'
 import { confirm } from '@clack/prompts'
 import { transform } from 'esbuild'
+import consola from 'consola'
 import { joinTemplate } from './path'
 
 export * from './file'
@@ -23,4 +24,8 @@ export const readAndParseTS = async (path: string) => {
     loader: 'ts',
   })
   return content.code
+}
+
+export const printErr = (message: string) => {
+  consola.error(`[EFFSO] Error: ${message}`)
 }
