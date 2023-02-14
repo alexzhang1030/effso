@@ -32,13 +32,9 @@
     "@types/fs-extra": "^11.0.1",
     "@types/node": "^18.13.0",
     "bumpp": "^8.2.1",
-    "cac": "^6.7.14",
     "colorette": "^2.0.19",
-    "consola": "^2.15.3",
     "eslint": "^8.34.0",
-    "fast-glob": "^3.2.12",
     "find-root": "^1.1.0",
-    "fs-extra": "^11.1.0",
     "home-or-tmp": "^4.0.0",
     "lint-staged": "^13.1.2",
     "pathe": "^1.1.0",
@@ -62,6 +58,10 @@
     "extends": "@antfu/eslint-config-ts"
   },
   "dependencies": {
-    "esbuild": "^0.17.8"
+    "esbuild": "^0.17.8",
+    "consola": "^2.15.3",
+    "fs-extra": "^11.1.0",
+    "cac": "^6.7.14",
+    "fast-glob": "^3.2.12"
   }
 }
