@@ -62,6 +62,8 @@ effso run
 
 ### 规则
 
+这有一个我的 [effso 配置参考](https://github.com/alexzhang1030/effso-template)
+
 #### `main.json`
 
 配置当前根选项默认选中的规则。

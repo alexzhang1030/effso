@@ -63,6 +63,8 @@ When you choose a rule, it will read the files in the directory, and operate cur
 
 ### Rules
 
+Here is my [effso template example](https://github.com/alexzhang1030/effso-template)
+
 #### `main.json`
 
 Configure current root option default selected rules.
