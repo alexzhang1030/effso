@@ -1,6 +1,6 @@
 # EFFSO
 
-![logo](./resource/logo.png)
+![logo](https://sm.ms/image/Z7yCLPdSwikglVe)
 
 [English](./README.md) / 简体中文
 
