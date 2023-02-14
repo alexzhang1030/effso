@@ -2,6 +2,7 @@ import fg from 'fast-glob'
 import { select } from '@clack/prompts'
 import { joinTemplate } from '../utils/path'
 import { resolvePkg } from './pkg'
+import { resolveSingle } from './single'
 
 const resolveRootOptions = async (rootDirs: string[] = []) => {
   return await select({
@@ -19,6 +20,6 @@ export const resolve = async (path: string) => {
     onlyDirectories: true,
   })
   const root = await resolveRootOptions(rootDirs) as string
-  // await resolveSingle(root)
+  await resolveSingle(root)
   await resolvePkg(root)
 }
