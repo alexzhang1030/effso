@@ -4,7 +4,7 @@ import { readAndParseTS, readGuard, targetRootPkgJSON } from '../utils'
 import type { PackageJSON } from '..'
 
 const single = async (path: string) => {
-  const content = readAndParseTS(path)
+  const content = await readAndParseTS(path)
   const pkgJson = await readGuard(targetRootPkgJSON(), 'package.json')
   const code = `${content};\n\nreturn main(${pkgJson});`
   // eslint-disable-next-line no-new-func
