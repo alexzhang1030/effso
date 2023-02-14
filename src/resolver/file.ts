@@ -16,7 +16,7 @@ const single = async (path: string) => {
   }
 
   const writeFn = (path: string, content: string) => {
-    ensureDirSync(path)
+    ensureDirSync(path.split('/').slice(0, -1).join('/') ?? '')
     writeFileSync(path, content, 'utf-8')
   }
 
