@@ -1,4 +1,5 @@
 import { readFileSync, writeFileSync } from 'fs'
+import { ensureDirSync } from 'fs-extra'
 import { TARGET_PATH, readAndParseTS } from '../utils'
 
 const single = async (path: string) => {
@@ -15,6 +16,7 @@ const single = async (path: string) => {
   }
 
   const writeFn = (path: string, content: string) => {
+    ensureDirSync(path)
     writeFileSync(path, content, 'utf-8')
   }
 
