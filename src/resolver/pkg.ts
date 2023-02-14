@@ -14,12 +14,11 @@ const single = async (path: string) => {
 export const resolvePkg = async (files: string[], parentPath: string) => {
   const promises = []
   for (const item of files) {
-    promises.push(new Promise<PackageJSON>((resolve, reject) => {
+    promises.push(new Promise<PackageJSON>((resolve) => {
       single(`${parentPath}/${item}`).then((result) => {
         resolve(result)
       }).catch((err) => {
         printErr((err as Error).message)
-        reject(err)
       })
     }))
   }
