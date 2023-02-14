@@ -1,7 +1,7 @@
 import cac from 'cac'
 import { version } from '../../package.json'
 import { safetyRun } from '../utils/run'
-import { run } from './effso'
+import { run } from './run'
 import { setup } from './setup'
 
 export const setupCLI = async () => {
