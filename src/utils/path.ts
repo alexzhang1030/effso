@@ -10,15 +10,19 @@ export const GLOB_PATTERNS = {
   single: ['*', '!*.pkg.ts', '!*.file.ts', '!main.ts'],
 }
 
-export const resolveSpecial = (paths: string[]) => {
-  const results = []
-  for (const item of paths) {
-    if (item === '_gitignore')
-      results.push('.gitignore')
-    else
-      results.push(item)
-  }
-  return results
+const _mapping = {
+  _gitignore: '.gitignore',
+  _foo: '.bar',
+}
+
+export const resolveSpecial = (paths: string[], toReal = true) => {
+  const _currentMap: Record<string, string> = toReal
+    ? _mapping
+    : Object.entries(_mapping).reduce((acc, [k, v]) => {
+      acc[v] = k
+      return acc
+    }, {} as Record<string, string>)
+  return paths.map(item => _currentMap[item] || item)
 }
 export const joinTemplate = (sub: string) => resolve(DEFAULT_TEMPLATE_PATH, sub)
 export const withTarget = (path: string) => resolve(process.cwd(), path)

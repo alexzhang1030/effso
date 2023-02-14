@@ -32,7 +32,7 @@ const resolveSingle = async (parentPath: string) => {
   })
   if (!sure)
     return
-  safetyRun(async () => await Promise.all(selected.map((item) => {
+  safetyRun(async () => await Promise.all(resolveSpecial(selected, false).map((item) => {
     return copy(joinTemplate(`${parentPath}/${item}`), withTarget(item))
   })))
 }
