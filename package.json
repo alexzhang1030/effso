@@ -20,7 +20,8 @@
     "play": "tsx ./src/cli.ts",
     "build": "unbuild",
     "prepublishOnly": "pnpm run build",
-    "release": "bumpp --commit \"chore: release v%s\" --push --tag && pnpm publish"
+    "release": "bumpp --commit \"chore: release v%s\" --push --tag && pnpm publish",
+    "dep:up": "taze -I major"
   },
   "files": [
     "dist",
@@ -32,8 +33,8 @@
   },
   "devDependencies": {
     "@antfu/eslint-config-ts": "^0.35.2",
-    "@clack/core": "^0.1.2",
-    "@clack/prompts": "^0.2.0",
+    "@clack/core": "^0.1.4",
+    "@clack/prompts": "^0.3.0",
     "@types/fs-extra": "^11.0.1",
     "@types/node": "^18.13.0",
     "bumpp": "^8.2.1",
@@ -43,12 +44,12 @@
     "lint-staged": "^13.1.2",
     "pathe": "^1.1.0",
     "pkg-dir": "^7.0.0",
-    "putil-merge": "^3.10.1",
+    "putil-merge": "^3.10.3",
     "simple-git-hooks": "^2.8.1",
     "taze": "^0.8.5",
     "tsx": "^3.12.3",
     "typescript": "4.9.5",
-    "unbuild": "^1.1.1"
+    "unbuild": "^1.1.2"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm exec lint-staged"

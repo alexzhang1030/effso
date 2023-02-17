@@ -46,6 +46,7 @@ const resolveOptions = async (parentPath: string) => {
       value: item,
       label: item,
     })),
+    initialValue: defaultConfig.default,
   }) as string[]
 
   if (isCancel(selected))
