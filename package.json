@@ -1,6 +1,6 @@
 {
   "name": "effso",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "type": "module",
   "packageManager": "pnpm@7.27.0",
   "description": "Effso is a tool to help you operate files and directories in a more efficient way.",
