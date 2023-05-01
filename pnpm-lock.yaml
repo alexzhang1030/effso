@@ -5,7 +5,7 @@ specifiers:
   '@clack/core': ^0.3.2
   '@clack/prompts': ^0.6.3
   '@types/fs-extra': ^11.0.1
-  '@types/node': ^18.16.1
+  '@types/node': ^18.16.3
   bumpp: ^9.1.0
   cac: ^6.7.14
   colorette: ^2.0.20
@@ -21,7 +21,7 @@ specifiers:
   putil-merge: ^3.10.3
   simple-git-hooks: ^2.8.1
   taze: ^0.9.2
-  tsx: ^3.12.6
+  tsx: ^3.12.7
   typescript: 5.0.4
   unbuild: ^1.2.1
 
@@ -37,7 +37,7 @@ devDependencies:
   '@clack/core': 0.3.2
   '@clack/prompts': 0.6.3
   '@types/fs-extra': 11.0.1
-  '@types/node': 18.16.1
+  '@types/node': 18.16.3
   bumpp: 9.1.0
   colorette: 2.0.20
   eslint: 8.39.0
@@ -48,7 +48,7 @@ devDependencies:
   putil-merge: 3.10.3
   simple-git-hooks: 2.8.1
   taze: 0.9.2
-  tsx: 3.12.6
+  tsx: 3.12.7
   typescript: 5.0.4
   unbuild: 1.2.1
 
@@ -862,7 +862,7 @@ packages:
     resolution: {integrity: sha512-MxObHvNl4A69ofaTRU8DFqvgzzv8s9yRtaPPm5gud9HDNvpB3GPQFvNuTWAI59B9huVGV5jXYJwbCsmBsOGYWA==}
     dependencies:
       '@types/jsonfile': 6.1.1
-      '@types/node': 18.16.1
+      '@types/node': 18.16.3
     dev: true
 
   /@types/json-schema/7.0.11:
@@ -876,7 +876,7 @@ packages:
   /@types/jsonfile/6.1.1:
     resolution: {integrity: sha512-GSgiRCVeapDN+3pqA35IkQwasaCh/0YFH5dEF6S88iDvEn901DjOeH3/QPY+XYP1DFzDZPvIvfeEgk+7br5png==}
     dependencies:
-      '@types/node': 18.16.1
+      '@types/node': 18.16.3
     dev: true
 
   /@types/mdast/3.0.10:
@@ -885,8 +885,8 @@ packages:
       '@types/unist': 2.0.6
     dev: true
 
-  /@types/node/18.16.1:
-    resolution: {integrity: sha512-DZxSZWXxFfOlx7k7Rv4LAyiMroaxa3Ly/7OOzZO8cBNho0YzAi4qlbrx8W27JGqG57IgR/6J7r+nOJWw6kcvZA==}
+  /@types/node/18.16.3:
+    resolution: {integrity: sha512-OPs5WnnT1xkCBiuQrZA4+YAV4HEJejmHneyraIaxsbev5yCEr6KMwINNFP9wQeFIw8FWcoTqF3vQsa5CDaI+8Q==}
     dev: true
 
   /@types/normalize-package-data/2.4.1:
@@ -4254,8 +4254,8 @@ packages:
       typescript: 5.0.4
     dev: true
 
-  /tsx/3.12.6:
-    resolution: {integrity: sha512-q93WgS3lBdHlPgS0h1i+87Pt6n9K/qULIMNYZo07nSeu2z5QE2CellcAZfofVXBo2tQg9av2ZcRMQ2S2i5oadQ==}
+  /tsx/3.12.7:
+    resolution: {integrity: sha512-C2Ip+jPmqKd1GWVQDvz/Eyc6QJbGfE7NrR3fx5BpEHMZsEHoIxHL1j+lKdGobr8ovEyqeNkPLSKp6SCSOt7gmw==}
     hasBin: true
     dependencies:
       '@esbuild-kit/cjs-loader': 2.4.2

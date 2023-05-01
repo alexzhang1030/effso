@@ -36,7 +36,7 @@
     "@clack/core": "^0.3.2",
     "@clack/prompts": "^0.6.3",
     "@types/fs-extra": "^11.0.1",
-    "@types/node": "^18.16.1",
+    "@types/node": "^18.16.3",
     "bumpp": "^9.1.0",
     "colorette": "^2.0.20",
     "eslint": "^8.39.0",
@@ -47,7 +47,7 @@
     "putil-merge": "^3.10.3",
     "simple-git-hooks": "^2.8.1",
     "taze": "^0.9.2",
-    "tsx": "^3.12.6",
+    "tsx": "^3.12.7",
     "typescript": "5.0.4",
     "unbuild": "^1.2.1"
   },
