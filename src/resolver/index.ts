@@ -53,12 +53,14 @@ async function resolveOptions(parentPath: string) {
 
   const { filePaths, pkgPaths, singles } = splitPaths(selected)
   makeSure(async () => {
+    const resolveTasks = []
     if (singles.length)
-      await resolveSingle(singles, parentPath)
+      resolveTasks.push(resolveSingle(singles, parentPath))
     if (pkgPaths.length)
-      await resolvePkg(pkgPaths, parentPath)
+      resolveTasks.push(resolvePkg(pkgPaths, parentPath))
     if (filePaths.length)
-      await resolveFile(filePaths, parentPath)
+      resolveTasks.push(resolveFile(filePaths, parentPath))
+    await Promise.all(resolveTasks)
   }, 'Are you sure?')
 }
 
