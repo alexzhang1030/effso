@@ -1,6 +1,6 @@
 import consola from 'consola'
 
-export const safetyRun = async (fn: (...args: any[]) => Promise<unknown>) => {
+export async function safetyRun(fn: (...args: any[]) => Promise<unknown>) {
   try {
     await fn()
   }

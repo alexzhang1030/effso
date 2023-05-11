@@ -5,7 +5,7 @@ import { blueBright, cyan } from 'colorette'
 import { resolve } from '../resolver'
 import { DEFAULT_TEMPLATE_PATH } from '../utils/path'
 
-export const run = async () => {
+export async function run() {
   const isExist = await exists(DEFAULT_TEMPLATE_PATH)
   if (!isExist) {
     consola.error(`Can't find any template in ${blueBright(DEFAULT_TEMPLATE_PATH)}, try run ${cyan('effso setup')}`)

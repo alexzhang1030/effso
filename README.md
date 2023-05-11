@@ -103,8 +103,8 @@ The same as `*.pkg.ts`, this file can only have one function, it's name must be 
 function main(
   path: string,
   helpers: {
-    read: (path: string) => string;
-    write: (path: string, content: string) => void;
+    read: (path: string) => string
+    write: (path: string, content: string) => void
   }
 ) {
   // to something
@@ -119,23 +119,23 @@ For example:
 function main(
   path: string,
   helpers: {
-    read: (path: string) => string;
-    write: (path: string, content: string) => void;
+    read: (path: string) => string
+    write: (path: string, content: string) => void
   }
 ) {
-  const target = `${path}/.github/renovate.json`;
-  const content = helpers.read(target);
+  const target = `${path}/.github/renovate.json`
+  const content = helpers.read(target)
   if (!content) {
     write(
       target,
       JSON.stringify(
         {
-          extends: ["config:base"],
+          extends: ['config:base'],
         },
         null,
         2
       )
-    );
+    )
   }
 }
 ```

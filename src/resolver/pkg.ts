@@ -1,9 +1,9 @@
-import { writeFile } from 'fs/promises'
+import { writeFile } from 'node:fs/promises'
 import merge from 'putil-merge'
 import { printErr, readAndParseTS, readGuard, targetRootPkgJSON } from '../utils'
 import type { PackageJSON } from '..'
 
-const single = async (path: string) => {
+async function single(path: string) {
   const content = await readAndParseTS(path)
   const pkgJson = await readGuard(targetRootPkgJSON(), 'package.json')
   const code = `${content};\n\nreturn main(${pkgJson});`
@@ -11,7 +11,7 @@ const single = async (path: string) => {
   return new Function(code)()
 }
 
-export const resolvePkg = async (files: string[], parentPath: string) => {
+export async function resolvePkg(files: string[], parentPath: string) {
   const promises = []
   for (const item of files) {
     promises.push(new Promise<PackageJSON>((resolve) => {

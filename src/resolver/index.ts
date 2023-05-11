@@ -1,4 +1,4 @@
-import { readFile } from 'fs/promises'
+import { readFile } from 'node:fs/promises'
 import fg from 'fast-glob'
 import { isCancel, multiselect, select } from '@clack/prompts'
 import { exists } from 'fs-extra'
@@ -8,7 +8,7 @@ import { resolvePkg } from './pkg'
 import { resolveSingle } from './single'
 import { resolveFile } from './file'
 
-const resolveRootOptions = async (rootDirs: string[] = []) => {
+async function resolveRootOptions(rootDirs: string[] = []) {
   return await select({
     message: 'Pick a type',
     options: rootDirs.map(item => ({
@@ -18,7 +18,7 @@ const resolveRootOptions = async (rootDirs: string[] = []) => {
   })
 }
 
-const readDefaultConfig = async (parentPath: string) => {
+async function readDefaultConfig(parentPath: string) {
   const mainJson = `${parentPath}/main.json`
   let defaultConfig: DefaultConfig = {
     default: [],
@@ -29,7 +29,7 @@ const readDefaultConfig = async (parentPath: string) => {
   return defaultConfig
 }
 
-const resolveOptions = async (parentPath: string) => {
+async function resolveOptions(parentPath: string) {
   // TODO: default config
   const defaultConfig = await readDefaultConfig(parentPath)
   let files = await fg(['*', '!main.json'], {
@@ -63,7 +63,7 @@ const resolveOptions = async (parentPath: string) => {
   }, 'Are you sure?')
 }
 
-export const resolve = async (path: string) => {
+export async function resolve(path: string) {
   try {
     const rootDirs = await fg('*', {
       cwd: path,

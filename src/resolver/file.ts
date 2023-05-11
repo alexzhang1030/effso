@@ -1,8 +1,8 @@
-import { readFileSync, writeFileSync } from 'fs'
+import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { ensureDirSync } from 'fs-extra'
 import { TARGET_PATH, readAndParseTS } from '../utils'
 
-const single = async (path: string) => {
+async function single(path: string) {
   const content = await readAndParseTS(path)
   const code = `${content};\n\n
     main("${TARGET_PATH}", {
@@ -11,8 +11,14 @@ const single = async (path: string) => {
     });
   `
 
+  const ifExist = (path: string) => {
+    return existsSync(path)
+  }
+
   const readFn = (path: string) => {
-    return readFileSync(path, 'utf-8')
+    return ifExist(path)
+      ? readFileSync(path, 'utf-8')
+      : null
   }
 
   const writeFn = (path: string, content: string) => {
@@ -24,7 +30,7 @@ const single = async (path: string) => {
   new Function('read', 'write', code)(readFn, writeFn)
 }
 
-export const resolveFile = async (files: string[], parentPath: string) => {
+export async function resolveFile(files: string[], parentPath: string) {
   const promises = []
   for (const item of files) {
     promises.push(new Promise<void>((resolve, reject) => {

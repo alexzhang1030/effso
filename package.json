@@ -1,21 +1,29 @@
 {
   "name": "effso",
-  "version": "0.4.0",
   "type": "module",
+  "version": "0.4.0",
   "packageManager": "pnpm@8.5.0",
   "description": "Effso is a tool to help you operate files and directories in a more efficient way.",
+  "author": "alexzhang1030",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexzhang1030/effso.git"
+  },
   "keywords": [
     "CLI",
     "effso",
     "file system",
     "file"
   ],
-  "license": "MIT",
-  "author": "alexzhang1030",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/alexzhang1030/effso.git"
+  "bin": {
+    "effso": "./bin/effso.mjs"
   },
+  "files": [
+    "dist",
+    "template",
+    "bin"
+  ],
   "scripts": {
     "play": "tsx ./src/cli.ts",
     "build": "unbuild",
@@ -23,13 +31,12 @@
     "release": "bumpp --commit \"chore: release v%s\" --push --tag && pnpm publish",
     "dep:up": "taze -I major"
   },
-  "files": [
-    "dist",
-    "template",
-    "bin"
-  ],
-  "bin": {
-    "effso": "./bin/effso.mjs"
+  "dependencies": {
+    "cac": "^6.7.14",
+    "consola": "^3.1.0",
+    "esbuild": "^0.17.18",
+    "fast-glob": "^3.2.12",
+    "fs-extra": "^11.1.1"
   },
   "devDependencies": {
     "@antfu/eslint-config-ts": "^0.38.6",
@@ -60,13 +67,10 @@
     ]
   },
   "eslintConfig": {
-    "extends": "@antfu/eslint-config-ts"
-  },
-  "dependencies": {
-    "cac": "^6.7.14",
-    "consola": "^3.1.0",
-    "esbuild": "^0.17.18",
-    "fast-glob": "^3.2.12",
-    "fs-extra": "^11.1.1"
+    "extends": "@antfu/eslint-config-ts",
+    "ignorePatterns": [
+      "dist",
+      "template"
+    ]
   }
 }

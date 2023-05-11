@@ -1,4 +1,4 @@
-import { readFile } from 'fs/promises'
+import { readFile } from 'node:fs/promises'
 import { confirm } from '@clack/prompts'
 import { transform } from 'esbuild'
 import consola from 'consola'
@@ -8,7 +8,7 @@ export * from './file'
 export * from './path'
 export * from './run'
 
-export const makeSure = async (cb: () => Promise<void>, message: string) => {
+export async function makeSure(cb: () => Promise<void>, message: string) {
   const sure = await confirm({
     message,
   })
@@ -16,7 +16,7 @@ export const makeSure = async (cb: () => Promise<void>, message: string) => {
     await cb()
 }
 
-export const readAndParseTS = async (path: string) => {
+export async function readAndParseTS(path: string) {
   const fileContent = await readFile(joinTemplate(path), {
     encoding: 'utf-8',
   })
@@ -26,6 +26,6 @@ export const readAndParseTS = async (path: string) => {
   return content.code
 }
 
-export const printErr = (message: string) => {
+export function printErr(message: string) {
   consola.error(message)
 }
