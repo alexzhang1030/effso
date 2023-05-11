@@ -1,10 +1,9 @@
-// @ts-expect-error home-or-tmp is not typed
 import hot from 'home-or-tmp'
 import { resolve } from 'pathe'
 import { packageDirectorySync } from 'pkg-dir'
 
 export const TARGET_PATH = process.cwd()
-export const homeOrTemp: string = hot
+export const homeOrTemp = hot
 export const DEFAULT_TEMPLATE_PATH = resolve(homeOrTemp, './.effso')
 
 export const specialMapping = {
