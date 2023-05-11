@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
@@ -15,7 +16,14 @@
     "types": [
       "node"
     ],
-    "paths": {}
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "~/*": [
+        "./*"
+      ],
+    }
   },
   "exclude": [
     "dist",

@@ -8,4 +8,8 @@ export default defineBuildConfig({
   entries: ['./src/cli', './src/index'],
   externals: ['esbuild', 'consola', 'fs-extra', 'cac', 'fast-glob'],
   declaration: true,
+  alias: {
+    '@': './src',
+    '~': './',
+  },
 })

@@ -2,11 +2,11 @@ import { readFile } from 'node:fs/promises'
 import fg from 'fast-glob'
 import { isCancel, multiselect, select } from '@clack/prompts'
 import { exists } from 'fs-extra'
-import { joinTemplate, makeSure, printErr, resolveSpecial, splitPaths } from '../utils'
 import type { DefaultConfig } from '..'
-import { resolvePkg } from './pkg'
-import { resolveSingle } from './single'
-import { resolveFile } from './file'
+import { resolveFile } from '@/resolver/file'
+import { resolveSingle } from '@/resolver/single'
+import { resolvePkg } from '@/resolver/pkg'
+import { joinTemplate, makeSure, printErr, resolveSpecial, splitPaths } from '@/utils'
 
 async function resolveRootOptions(rootDirs: string[] = []) {
   return await select({
@@ -30,7 +30,6 @@ async function readDefaultConfig(parentPath: string) {
 }
 
 async function resolveOptions(parentPath: string) {
-  // TODO: default config
   const defaultConfig = await readDefaultConfig(parentPath)
   let files = await fg(['*', '!main.json'], {
     onlyFiles: true,
@@ -46,7 +45,7 @@ async function resolveOptions(parentPath: string) {
       value: item,
       label: item,
     })),
-    initialValue: defaultConfig.default,
+    initialValues: defaultConfig.default,
   }) as string[]
 
   if (isCancel(selected))

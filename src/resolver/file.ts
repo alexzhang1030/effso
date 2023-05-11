@@ -1,6 +1,6 @@
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { ensureDirSync } from 'fs-extra'
-import { TARGET_PATH, readAndParseTS } from '../utils'
+import { TARGET_PATH, readAndParseTS } from '@/utils'
 
 async function single(path: string) {
   const content = await readAndParseTS(path)

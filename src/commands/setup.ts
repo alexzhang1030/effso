@@ -3,7 +3,7 @@ import { resolve } from 'pathe'
 import { copy } from 'fs-extra'
 import consola from 'consola'
 import { packageDirectory } from 'pkg-dir'
-import { DEFAULT_TEMPLATE_PATH } from '../utils/path'
+import { DEFAULT_TEMPLATE_PATH } from '@/utils'
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url))
 
