@@ -4,9 +4,6 @@
 
 English / [简体中文](./README.zh.md)
 
-> **Warning**
-> Notice that Effso is still in the early stage of development, and the API is not stable. Use it at your own risk.
-
 ## Why
 
 Just imagine a scene:
