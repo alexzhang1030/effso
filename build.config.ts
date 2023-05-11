@@ -9,7 +9,7 @@ export default defineBuildConfig({
   externals: ['esbuild', 'consola', 'fs-extra', 'cac', 'fast-glob'],
   declaration: true,
   alias: {
-    '@': './src',
-    '~': './',
+    '@/*': './src/*',
+    '~/*': './*',
   },
 })
