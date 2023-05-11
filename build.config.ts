@@ -1,3 +1,4 @@
+import { resolve } from 'node:path'
 import { defineBuildConfig } from 'unbuild'
 
 export default defineBuildConfig({
@@ -9,7 +10,7 @@ export default defineBuildConfig({
   externals: ['esbuild', 'consola', 'fs-extra', 'cac', 'fast-glob'],
   declaration: true,
   alias: {
-    '@/*': './src/*',
-    '~/*': './*',
+    '@': resolve(__dirname, 'src'),
+    '~': __dirname,
   },
 })
