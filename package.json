@@ -2,7 +2,7 @@
   "name": "effso",
   "version": "0.4.0",
   "type": "module",
-  "packageManager": "pnpm@7.32.3",
+  "packageManager": "pnpm@8.5.0",
   "description": "Effso is a tool to help you operate files and directories in a more efficient way.",
   "keywords": [
     "CLI",
