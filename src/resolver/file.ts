@@ -1,5 +1,6 @@
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { ensureDirSync } from 'fs-extra'
+import mergeUtil from 'putil-merge'
 import { TARGET_PATH, readAndParseTS } from '@/utils'
 
 async function single(path: string) {
@@ -7,7 +8,8 @@ async function single(path: string) {
   const code = `${content};\n\n
     main("${TARGET_PATH}", {
       read,
-      write
+      write,
+      merge
     });
   `
 
@@ -26,8 +28,14 @@ async function single(path: string) {
     writeFileSync(path, content, 'utf-8')
   }
 
+  const mergeFn = (target: object, source: object) => {
+    return mergeUtil(target, source, {
+      deep: true,
+    })
+  }
+
   // eslint-disable-next-line no-new-func
-  new Function('read', 'write', code)(readFn, writeFn)
+  new Function('read', 'write', 'merge', code)(readFn, writeFn, mergeFn)
 }
 
 export async function resolveFile(files: string[], parentPath: string) {
