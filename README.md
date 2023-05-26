@@ -110,6 +110,8 @@ function main(
 
 You can modify the file by `helpers.read` and `helpers.write`.
 
+You can merge object by `helpers.merge`.
+
 For example:
 
 ```ts
@@ -118,6 +120,7 @@ function main(
   helpers: {
     read: (path: string) => string
     write: (path: string, content: string) => void
+    merge: (target: object, source: object) => object
   }
 ) {
   const target = `${path}/.github/renovate.json`

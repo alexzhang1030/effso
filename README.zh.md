@@ -114,6 +114,8 @@ function main(
 
 你可以通过 `helpers.read` 和 `helpers.write` 修改文件。
 
+你可以通过 `helpers.merge` 来合并两个对象。
+
 例如：
 
 ```ts
@@ -122,6 +124,7 @@ function main(
   helpers: {
     read: (path: string) => string
     write: (path: string, content: string) => void
+    merge: (target: object, source: object) => object
   }
 ) {
   const target = `${path}/.github/renovate.json`
