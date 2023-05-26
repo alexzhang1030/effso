@@ -16,10 +16,10 @@ export const specialKeys = Object.keys(specialMapping)
 export function resolveSpecial(paths: string[], toReal = true) {
   const _currentMap: Record<string, string> = toReal
     ? specialMapping
-    : Object.entries(specialMapping).reduce((acc, [k, v]) => {
+    : Object.entries(specialMapping).reduce<Record<string, string>>((acc, [k, v]) => {
       acc[v] = k
       return acc
-    }, {} as Record<string, string>)
+    }, {})
   return paths.map(item => _currentMap[item] || item)
 }
 export const joinTemplate = (sub: string) => resolve(DEFAULT_TEMPLATE_PATH, sub)
