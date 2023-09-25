@@ -39,14 +39,14 @@
     "fs-extra": "^11.1.1"
   },
   "devDependencies": {
-    "@antfu/eslint-config-ts": "^0.42.0",
+    "@antfu/eslint-config-ts": "^0.43.1",
     "@clack/core": "^0.3.3",
     "@clack/prompts": "^0.7.0",
     "@types/fs-extra": "^11.0.2",
-    "@types/node": "^18.17.17",
+    "@types/node": "^18.17.19",
     "bumpp": "^9.2.0",
     "colorette": "^2.0.20",
-    "eslint": "^8.49.0",
+    "eslint": "^8.50.0",
     "home-or-tmp": "^4.0.0",
     "lint-staged": "^14.0.1",
     "pathe": "^1.1.1",
@@ -54,7 +54,7 @@
     "putil-merge": "^3.10.3",
     "simple-git-hooks": "^2.9.0",
     "taze": "^0.11.2",
-    "tsx": "^3.12.10",
+    "tsx": "^3.13.0",
     "typescript": "5.2.2",
     "unbuild": "^2.0.0"
   },
