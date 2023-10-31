@@ -65,8 +65,8 @@ devDependencies:
     specifier: ^2.9.0
     version: 2.9.0
   taze:
-    specifier: ^0.11.4
-    version: 0.11.4
+    specifier: ^0.12.0
+    version: 0.12.0
   tsx:
     specifier: ^3.14.0
     version: 3.14.0
@@ -905,8 +905,8 @@ packages:
       - supports-color
     dev: true
 
-  /@npmcli/config@8.0.0:
-    resolution: {integrity: sha512-a2ybqstXSCAbP7QghgGcOvLTBlaR3wWQyAmTfWXJld6qP6+vKQabTZQwzRPs00kKi870beNZHhV4Fvlca2l/uA==}
+  /@npmcli/config@8.0.1:
+    resolution: {integrity: sha512-NKGmMYv/YTLwJr+qK9CvADSe82NTM9AFwFFpsZpVcPCT3XTdxvJBdXi8xvXWjHSCMb0Cb+7FtU/a5qqguCOhxA==}
     engines: {node: ^16.14.0 || >=18.0.0}
     dependencies:
       '@npmcli/map-workspaces': 3.0.2
@@ -4499,12 +4499,12 @@ packages:
       yallist: 4.0.0
     dev: true
 
-  /taze@0.11.4:
-    resolution: {integrity: sha512-X7Dob7+n77GOHO7UUQ+Bn2gZXjRK1NLffb/lMGy41uyGUCh3zOZVlQ+M7IrntXmSsNy0DDKpdzSe40mQK5NTVw==}
+  /taze@0.12.0:
+    resolution: {integrity: sha512-ftDYS/dNF0EkiEpZZweJxJKQRVFPBFFDz3OPezFloVtOHoMmVwLiMxLM9KYLnA+30D8IFdnGgS15WiIaz2bOfA==}
     hasBin: true
     dependencies:
       '@antfu/ni': 0.21.8
-      '@npmcli/config': 8.0.0
+      '@npmcli/config': 8.0.1
       cli-progress: 3.12.0
       deepmerge: 4.3.1
       detect-indent: 7.0.1

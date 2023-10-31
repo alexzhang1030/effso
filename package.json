@@ -2,7 +2,7 @@
   "name": "effso",
   "type": "module",
   "version": "0.8.0",
-  "packageManager": "pnpm@8.9.2",
+  "packageManager": "pnpm@8.10.0",
   "description": "Effso is a tool to help you operate files and directories in a more efficient way.",
   "author": "alexzhang1030",
   "license": "MIT",
@@ -53,7 +53,7 @@
     "pkg-dir": "^7.0.0",
     "putil-merge": "^3.12.1",
     "simple-git-hooks": "^2.9.0",
-    "taze": "^0.11.4",
+    "taze": "^0.12.0",
     "tsx": "^3.14.0",
     "typescript": "5.2.2",
     "unbuild": "^2.0.0"
