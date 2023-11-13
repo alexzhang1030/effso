@@ -1,6 +1,6 @@
 export function genShellCheckScript() {
   const hook = `
-  if [[ -d "./.effso" ]]; then
+  if [[ -f "./.effso/config.json" ]]; then
     effso build
   fi
   `
