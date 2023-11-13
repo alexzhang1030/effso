@@ -1,11 +1,11 @@
-import { spawn } from 'node:child_process'
+import { spawn, spawnSync } from 'node:child_process'
 import { createWriteStream, existsSync } from 'node:fs'
 import consola from 'consola'
 import { homeOrTemp, printErr } from '@/utils'
 
 const HookContent = [
   '# === effso start ===',
-  ``,
+  `eval "$(effso check)"`,
   '# === effso end ===',
 ]
 
@@ -41,6 +41,7 @@ function writeHook() {
   const write = spawn('echo', [HookContent.join('\n')])
   write.stdout.pipe(stream)
   write.on('close', () => {
+    spawnSync('source', [zshrc])
     consola.success('Hook injected')
   })
   write.stderr.on('data', (data) => {
