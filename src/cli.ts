@@ -1,3 +1,4 @@
 import { setupCLI } from './commands'
 
-await setupCLI()
+// eslint-disable-next-line ts/no-floating-promises
+setupCLI()
