@@ -5,7 +5,7 @@ import { homeOrTemp, printErr } from '@/utils'
 
 const HookContent = [
   '# === effso start ===',
-  `eval "$(effso check)"`,
+  `eval "$(effso env)"`,
   '# === effso end ===',
 ]
 
