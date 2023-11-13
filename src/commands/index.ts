@@ -1,4 +1,5 @@
 import cac from 'cac'
+import { intro } from '@clack/prompts'
 import { run } from './run'
 import { setup } from './setup'
 import { injectHook } from './hook'
@@ -32,6 +33,7 @@ export async function setupCLI() {
   })
 
   cli.command('build', 'Build by config').action(async () => {
+    intro('[EFFSO] Detect config file...')
     await makeSure(async () => {
       await safetyRun(build)
     }, 'Are you sure to run build? This will overwrite your project.')
