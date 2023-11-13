@@ -47,6 +47,18 @@ It generates some simple examples:
 
 ## Usage
 
+### Bash
+
+> NOTE: requires `zsh`
+
+```bash
+effso shell
+```
+
+Will inject some scripts into your `~/.zshrc` file.
+
+This will check if the current directory has a `.effso/config.json` file when you enter a path(use `cd` or something), if it has, will execute `effso build`.
+
 ### Build
 
 ```bash
