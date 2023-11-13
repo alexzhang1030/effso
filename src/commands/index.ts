@@ -3,7 +3,8 @@ import { run } from './run'
 import { setup } from './setup'
 import { injectHook } from './hook'
 import { genShellCheckScript } from './env'
-import { safetyRun } from '@/utils'
+import { build } from './build'
+import { makeSure, safetyRun } from '@/utils'
 import { version } from '~/package.json'
 
 export async function setupCLI() {
@@ -25,14 +26,15 @@ export async function setupCLI() {
     await safetyRun(injectHook)
   })
 
-  cli.command('env', 'Effso env things on zsh').action(async () => {
+  cli.command('env', 'Effso env things on zsh').action(() => {
     // eslint-disable-next-line no-console
     console.log(genShellCheckScript())
   })
 
   cli.command('build', 'Build by config').action(async () => {
-    // eslint-disable-next-line no-console
-    console.log('build')
+    await makeSure(async () => {
+      await safetyRun(build)
+    }, 'Are you sure to run build? This will overwrite your project.')
   })
 
   cli.help()

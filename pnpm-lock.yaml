@@ -11,6 +11,9 @@ dependencies:
   consola:
     specifier: ^3.2.3
     version: 3.2.3
+  degit:
+    specifier: ^2.8.4
+    version: 2.8.4
   esbuild:
     specifier: ^0.19.5
     version: 0.19.5
@@ -31,6 +34,9 @@ devDependencies:
   '@clack/prompts':
     specifier: ^0.7.0
     version: 0.7.0
+  '@types/degit':
+    specifier: ^2.8.6
+    version: 2.8.6
   '@types/fs-extra':
     specifier: ^11.0.4
     version: 11.0.4
@@ -43,6 +49,9 @@ devDependencies:
   colorette:
     specifier: ^2.0.20
     version: 2.0.20
+  destr:
+    specifier: ^2.0.2
+    version: 2.0.2
   eslint:
     specifier: ^8.53.0
     version: 8.53.0
@@ -1209,6 +1218,10 @@ packages:
       minimatch: 9.0.3
     dev: true
 
+  /@types/degit@2.8.6:
+    resolution: {integrity: sha512-y0M7sqzsnHB6cvAeTCBPrCQNQiZe8U4qdzf8uBVmOWYap5MMTN/gB2iEqrIqFiYcsyvP74GnGD5tgsHttielFw==}
+    dev: true
+
   /@types/estree@1.0.0:
     resolution: {integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==}
     dev: true
@@ -1913,6 +1926,12 @@ packages:
     resolution: {integrity: sha512-+uO4+qr7msjNNWKYPHqN/3+Dx3NFkmIzayk2L1MyZQlvgZb/J1A0fo410dpKrN2SnqFjt8n4JL8fDJE0wIgjFQ==}
     dev: true
 
+  /degit@2.8.4:
+    resolution: {integrity: sha512-vqYuzmSA5I50J882jd+AbAhQtgK6bdKUJIex1JNfEUPENCgYsxugzKVZlFyMwV4i06MmnV47/Iqi5Io86zf3Ng==}
+    engines: {node: '>=8.0.0'}
+    hasBin: true
+    dev: false
+
   /delegates@1.0.0:
     resolution: {integrity: sha512-bd2L678uiWATM6m5Z1VzNCErI3jiGzt6HGY8OVICs40JQq/HALfbyNJmp0UDakEY4pMMaN0Ly5om/B1VI/+xfQ==}
     dev: true
@@ -1922,8 +1941,8 @@ packages:
     engines: {node: '>= 0.6'}
     dev: true
 
-  /destr@2.0.1:
-    resolution: {integrity: sha512-M1Ob1zPSIvlARiJUkKqvAZ3VAqQY6Jcuth/pBKQ2b1dX/Qx0OnJ8Vux6J2H5PTMQeRzWrrbTu70VxBfv/OPDJA==}
+  /destr@2.0.2:
+    resolution: {integrity: sha512-65AlobnZMiCET00KaFFjUefxDX0khFA/E4myqZ7a6Sq1yZtR8+FVIvilVX66vF2uobSumxooYZChiRPCKNqhmg==}
     dev: true
 
   /detect-indent@7.0.1:
@@ -3995,7 +4014,7 @@ packages:
     resolution: {integrity: sha512-lNeOl38Ws0eNxpO3+wD1I9rkHGQyj1NU1jlzv4go2CtEnEQEUfqnIvZG7W+bC/aXdJ27n5x/yUjb6RoT9tko+Q==}
     dependencies:
       defu: 6.1.2
-      destr: 2.0.1
+      destr: 2.0.2
       flat: 5.0.2
     dev: true
 

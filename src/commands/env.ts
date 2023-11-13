@@ -12,5 +12,5 @@ export function genShellCheckScript() {
   }}
 
   add-zsh-hook chpwd _effso_autoload_hook \
-    && effso`
+    && _effso_autoload_hook`
 }

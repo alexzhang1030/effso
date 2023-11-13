@@ -7,7 +7,7 @@ export default defineBuildConfig({
     inlineDependencies: true,
   },
   entries: ['./src/cli', './src/index'],
-  externals: ['esbuild', 'consola', 'fs-extra', 'cac', 'fast-glob'],
+  externals: ['esbuild', 'consola', 'fs-extra', 'cac', 'fast-glob', 'degit'],
   declaration: true,
   alias: {
     '@': resolve(__dirname, 'src'),

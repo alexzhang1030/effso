@@ -47,6 +47,29 @@ It generates some simple examples:
 
 ## Usage
 
+### Build
+
+```bash
+# Run in your project directory
+effso build
+```
+
+Will read `./.effso/config.json` to build things from given rules.
+
+Like:
+
+```json
+{
+  "extends": ["github.com/alexzhang1030/starter-ts"]
+}
+```
+
+Extends things will pass to `degit` to overrides current workspace files.
+
+Useful when you want to init a project from a starter-template.
+
+### Run
+
 ```bash
 # Run in your project directory
 effso run
@@ -58,11 +81,11 @@ It will read `~/.effso/*` to generate rules. One second level directory will bec
 
 When you choose a rule, it will read the files in the directory, and operate current workspace files by pre-defined rules.
 
-### Rules
+#### Rules
 
 Here is my [effso rules example](https://github.com/alexzhang1030/effso-rules)
 
-#### `main.json`
+##### `main.json`
 
 Configure current root option default selected rules.
 
@@ -74,11 +97,11 @@ Currently only support `JSON`. If `main.json` is not provided, will have no defa
 }
 ```
 
-#### Single file
+##### Single file
 
 Every single file selected will overrides current workspace file.
 
-#### \*.pkg.ts
+##### \*.pkg.ts
 
 Will execute this rule by passing current `package.json` if it exists.
 
@@ -90,7 +113,7 @@ function main(pkg: Record<string, any>) {
 }
 ```
 
-#### \*.file.ts
+##### \*.file.ts
 
 Will execute this rule by passing current workspace path.
 
