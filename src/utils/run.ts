@@ -5,6 +5,6 @@ export async function safetyRun(fn: (...args: any[]) => Promise<unknown>) {
     await fn()
   }
   catch (error) {
-    consola.error('[Effso] Error:', error)
+    consola.error('[Effso] Error:', (error as Error).message)
   }
 }

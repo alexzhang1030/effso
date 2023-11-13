@@ -1,8 +1,9 @@
+import { cwd } from 'node:process'
 import hot from 'home-or-tmp'
 import { resolve } from 'pathe'
 import { packageDirectorySync } from 'pkg-dir'
 
-export const TARGET_PATH = process.cwd()
+export const TARGET_PATH = cwd()
 export const homeOrTemp = hot
 export const DEFAULT_TEMPLATE_PATH = resolve(homeOrTemp, './.effso')
 

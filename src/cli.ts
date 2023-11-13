@@ -1,3 +1,3 @@
 import { setupCLI } from './commands'
 
-setupCLI()
+await setupCLI()
