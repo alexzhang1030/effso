@@ -7,6 +7,10 @@ import { version } from '~/package.json'
 export async function setupCLI() {
   const cli = cac('effso')
 
+  cli.command('').action(() => {
+    cli.outputHelp()
+  })
+
   cli.command('run', 'Run effso').action(async () => {
     await safetyRun(run)
   })
