@@ -35,12 +35,12 @@
     "cac": "^6.7.14",
     "consola": "^3.2.3",
     "degit": "^2.8.4",
-    "esbuild": "^0.19.9",
+    "esbuild": "^0.19.10",
     "fast-glob": "^3.3.2",
     "fs-extra": "^11.2.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.4.6",
+    "@antfu/eslint-config": "^2.6.0",
     "@clack/core": "^0.3.3",
     "@clack/prompts": "^0.7.0",
     "@types/degit": "^2.8.6",
@@ -57,7 +57,7 @@
     "putil-merge": "^3.12.1",
     "simple-git-hooks": "^2.9.0",
     "taze": "^0.13.0",
-    "tsx": "^4.6.2",
+    "tsx": "^4.7.0",
     "typescript": "5.3.3",
     "unbuild": "^2.0.0"
   },
