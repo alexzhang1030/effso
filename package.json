@@ -40,12 +40,12 @@
     "fs-extra": "^11.2.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.8.3",
+    "@antfu/eslint-config": "^2.9.0",
     "@clack/core": "^0.3.4",
     "@clack/prompts": "^0.7.0",
     "@types/degit": "^2.8.6",
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^20.11.28",
+    "@types/node": "^20.11.30",
     "bumpp": "^9.4.0",
     "colorette": "^2.0.20",
     "destr": "^2.0.3",
@@ -58,7 +58,7 @@
     "simple-git-hooks": "^2.11.0",
     "taze": "^0.13.3",
     "tsx": "^4.7.1",
-    "typescript": "5.4.2",
+    "typescript": "5.4.3",
     "unbuild": "^2.0.0"
   },
   "simple-git-hooks": {
