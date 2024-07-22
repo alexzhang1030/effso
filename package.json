@@ -2,7 +2,7 @@
   "name": "effso",
   "type": "module",
   "version": "0.9.6",
-  "packageManager": "pnpm@9.5.0",
+  "packageManager": "pnpm@9.6.0",
   "description": "Effso is a tool to help you operate files and directories in a more efficient way.",
   "author": "alexzhang1030",
   "license": "MIT",
@@ -40,12 +40,12 @@
     "fs-extra": "^11.2.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.22.2",
+    "@antfu/eslint-config": "^2.23.1",
     "@clack/core": "^0.3.4",
     "@clack/prompts": "^0.7.0",
     "@types/degit": "^2.8.6",
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^20.14.10",
+    "@types/node": "^20.14.11",
     "bumpp": "^9.4.1",
     "colorette": "^2.0.20",
     "destr": "^2.0.3",
@@ -56,7 +56,7 @@
     "pkg-dir": "^8.0.0",
     "putil-merge": "^3.12.1",
     "simple-git-hooks": "^2.11.1",
-    "taze": "^0.15.0",
+    "taze": "^0.16.1",
     "tsx": "^4.16.2",
     "typescript": "5.5.3",
     "unbuild": "^2.0.0"
