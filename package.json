@@ -59,7 +59,7 @@
     "taze": "^0.18.0",
     "tsx": "^4.19.2",
     "typescript": "5.7.2",
-    "unbuild": "^2.0.0"
+    "unbuild": "^3.0.1"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm exec lint-staged"
