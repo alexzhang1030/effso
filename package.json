@@ -40,7 +40,7 @@
     "fs-extra": "^11.3.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^3.16.0",
+    "@antfu/eslint-config": "^4.1.1",
     "@clack/core": "^0.4.1",
     "@clack/prompts": "^0.9.1",
     "@types/degit": "^2.8.6",
