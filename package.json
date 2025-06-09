@@ -53,7 +53,7 @@
     "home-or-tmp": "^4.0.0",
     "lint-staged": "^16.1.0",
     "pathe": "^2.0.3",
-    "pkg-dir": "^8.0.0",
+    "pkg-dir": "^9.0.0",
     "putil-merge": "^3.13.0",
     "simple-git-hooks": "^2.13.0",
     "taze": "^19.1.0",
