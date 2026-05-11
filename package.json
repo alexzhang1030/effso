@@ -51,7 +51,7 @@
     "destr": "^2.0.5",
     "eslint": "^10.3.0",
     "home-or-tmp": "^4.0.0",
-    "lint-staged": "^16.4.0",
+    "lint-staged": "^17.0.4",
     "pathe": "^2.0.3",
     "pkg-dir": "^9.0.0",
     "putil-merge": "^3.13.0",
