@@ -34,7 +34,7 @@
   "dependencies": {
     "cac": "^7.0.0",
     "consola": "^3.4.2",
-    "degit": "^2.8.6",
+    "degit": "^3.4.2",
     "esbuild": "^0.28.0",
     "fast-glob": "^3.3.3",
     "fs-extra": "^11.3.5"
