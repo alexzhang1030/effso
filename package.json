@@ -2,7 +2,7 @@
   "name": "effso",
   "type": "module",
   "version": "0.9.6",
-  "packageManager": "pnpm@11.13.0",
+  "packageManager": "pnpm@11.17.0",
   "description": "Effso is a tool to help you operate files and directories in a more efficient way.",
   "author": "alexzhang1030",
   "license": "MIT",
@@ -34,13 +34,13 @@
   "dependencies": {
     "cac": "^7.0.0",
     "consola": "^3.4.2",
-    "degit": "^3.6.0",
+    "degit": "^3.6.3",
     "esbuild": "^0.28.1",
     "fast-glob": "^3.3.3",
-    "fs-extra": "^11.3.6"
+    "fs-extra": "^11.4.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^9.1.0",
+    "@antfu/eslint-config": "^9.2.0",
     "@clack/core": "^1.4.3",
     "@clack/prompts": "^1.7.0",
     "@types/degit": "^2.8.6",
@@ -49,14 +49,14 @@
     "bumpp": "^11.1.0",
     "colorette": "^2.0.20",
     "destr": "^2.0.5",
-    "eslint": "^10.7.0",
+    "eslint": "^10.8.0",
     "home-or-tmp": "^4.0.0",
-    "lint-staged": "^17.0.8",
+    "lint-staged": "^17.2.0",
     "pathe": "^2.0.3",
     "pkg-dir": "^9.0.0",
     "putil-merge": "^3.13.0",
     "simple-git-hooks": "^2.13.1",
-    "taze": "^19.14.1",
+    "taze": "^19.16.0",
     "tsx": "^4.23.1",
     "typescript": "7.0.2",
     "unbuild": "^3.6.1"
