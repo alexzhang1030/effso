@@ -1,7 +1,7 @@
 {
   "name": "effso",
   "type": "module",
-  "version": "0.9.6",
+  "version": "0.9.7",
   "packageManager": "pnpm@11.21.0",
   "description": "Effso is a tool to help you operate files and directories in a more efficient way.",
   "author": "alexzhang1030",
@@ -58,7 +58,7 @@
     "simple-git-hooks": "^2.13.1",
     "taze": "^20.0.0",
     "tsx": "^4.23.11",
-    "typescript": "7.0.2",
+    "typescript": "5.9.3",
     "unbuild": "^3.6.1"
   },
   "simple-git-hooks": {
