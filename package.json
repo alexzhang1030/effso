@@ -56,7 +56,7 @@
     "pkg-dir": "^9.0.0",
     "putil-merge": "^3.13.0",
     "simple-git-hooks": "^2.13.1",
-    "taze": "^19.17.2",
+    "taze": "^20.0.0",
     "tsx": "^4.23.11",
     "typescript": "7.0.2",
     "unbuild": "^3.6.1"
