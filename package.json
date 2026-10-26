@@ -2,7 +2,7 @@
   "name": "effso",
   "type": "module",
   "version": "0.9.7",
-  "packageManager": "pnpm@12.14.0",
+  "packageManager": "pnpm@12.15.0",
   "description": "Effso is a tool to help you operate files and directories in a more efficient way.",
   "author": "alexzhang1030",
   "license": "MIT",
@@ -34,7 +34,7 @@
   "dependencies": {
     "cac": "^7.1.0",
     "consola": "^3.4.2",
-    "degit": "^3.10.0",
+    "degit": "^3.10.1",
     "esbuild": "^0.28.2",
     "fast-glob": "^3.3.3",
     "fs-extra": "^11.4.1"
