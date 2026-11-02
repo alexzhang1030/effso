@@ -43,7 +43,7 @@
     "@antfu/eslint-config": "^10.0.0",
     "@clack/core": "^1.5.1",
     "@clack/prompts": "^1.8.1",
-    "@types/degit": "^2.8.6",
+    "@types/degit": "^3.10.0",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^24.19.2",
     "bumpp": "^12.3.0",
