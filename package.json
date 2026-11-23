@@ -32,7 +32,7 @@
     "dep:up": "taze -I major"
   },
   "dependencies": {
-    "cac": "^7.1.0",
+    "cac": "^7.1.1",
     "consola": "^3.4.2",
     "degit": "^3.10.1",
     "esbuild": "^0.28.2",
@@ -51,7 +51,7 @@
     "destr": "^2.0.5",
     "eslint": "^10.15.0",
     "home-or-tmp": "^4.0.0",
-    "lint-staged": "^17.6.1",
+    "lint-staged": "^17.6.2",
     "pathe": "^2.0.3",
     "pkg-dir": "^9.0.0",
     "putil-merge": "^3.13.0",
